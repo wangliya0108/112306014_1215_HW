@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>112306014_1215_HW</title>
+</head>
+<body>
+
+<script>
+  // Generate a random number between 1 and 10
+  var rand = Math.floor(Math.random() * 10) + 1;
+
+  // User input and game loop
+  while (true) {
+    // Prompt the user to guess the number
+    var userGuess = prompt("Guess the number between 1 and 10:");
+
+    // Check if the input is valid
+    if (userGuess === null) {
+      // User clicked cancel, exit the loop
+      break;
+    }
+
+    // Convert the input to a number
+    userGuess = parseInt(userGuess);
+
+    // Check if the guess is within the valid range
+    if (userGuess >= 1 && userGuess <= 10) {
+      // Check if the guess is correct
+      if (userGuess === rand) {
+        alert("Congratulations! You guessed the correct number.");
+        document.write("<h1><center>Congratulations! You guessed the correct number.</center></h1>")
+        break;
+      } else if (userGuess < rand) {
+        // Alert if the guessed number is smaller
+        alert("Incorrect! The correct number is bigger. Try again.");
+      } else {
+        // Alert if the guessed number is bigger
+        alert("Incorrect! The correct number is smaller. Try again.");
+      }
+    } else {
+      // Alert if the guess is outside the valid range
+      alert("Please enter a number between 1 and 10.");
+    }
+  }
+</script>
+
+</body>
+</html>
